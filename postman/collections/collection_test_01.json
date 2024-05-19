@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "2fd70a2f-20c7-4307-9cd9-fcbe79974ed6",
+		"_postman_id": "bd64bde5-22d9-4527-91b3-01ae453b38cf",
 		"name": "collection_test_01",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "35033453-2fd70a2f-20c7-4307-9cd9-fcbe79974ed6"
+		"_uid": "35033453-bd64bde5-22d9-4527-91b3-01ae453b38cf"
 	},
 	"item": [
 		{
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e9587818-02dd-4641-b907-a81d610259ad",
+						"id": "460bf6fb-4337-49ba-a735-9c221c141e50",
 						"exec": [
 							"pm.test(\"Response status code is 200\", function () {",
 							"    pm.expect(pm.response.code).to.equal(200);",
@@ -28,7 +28,7 @@
 					}
 				}
 			],
-			"id": "dbd12301-03ef-4cea-95b2-d461e741bb8c",
+			"id": "d9a17eca-bf52-454c-95aa-10b1be8a0bcb",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -55,7 +55,7 @@
 		},
 		{
 			"name": "Get first product",
-			"id": "9c215883-549f-44db-9d6b-47dd4813d26b",
+			"id": "003da41f-e1f8-4921-b1bc-b5137246719c",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -80,7 +80,7 @@
 		},
 		{
 			"name": "Access login page",
-			"id": "23d1a014-0c9a-4135-8cd6-1e4b0056f568",
+			"id": "24139975-716c-405b-9671-26d65d297e53",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -117,11 +117,11 @@
 						],
 						"type": "text/javascript",
 						"packages": {},
-						"id": "20a36b44-22ef-4b32-92e8-0ca1642f2550"
+						"id": "0f890d77-75f0-4360-a9a0-d3fe363f1ff1"
 					}
 				}
 			],
-			"id": "7acaaff4-012c-4179-be55-1155f4614aab",
+			"id": "29500734-33f5-4b85-90ae-ac00934736f0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -160,7 +160,7 @@
 		},
 		{
 			"name": "Access dashboard",
-			"id": "bc7a160f-e266-4570-98c0-c51983e50854",
+			"id": "9f057823-4ba8-4a50-84a0-aefe4a608f49",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -207,7 +207,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5ac8fb1f-5a33-4415-8b00-ba02e29f3676",
+						"id": "7b9440b1-e29c-49a4-8bd6-700480e91100",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {\r",
 							"    pm.response.to.have.status(201);\r",
@@ -268,7 +268,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "81e12897-5859-42f6-bb64-b3fb47ee5102",
+						"id": "cf503d49-ebb7-45d8-bcba-ac9cf18da6c8",
 						"exec": [
 							"// Function to generate a random 5-digit number with prefix 88\r",
 							"function generateRandomId() {\r",
@@ -318,7 +318,7 @@
 					}
 				}
 			],
-			"id": "d42543bc-6ee0-46bc-b49e-d385e0b1f3e8",
+			"id": "93621de4-8025-483b-b70d-74a5b1487e44",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
