@@ -26,7 +26,7 @@ jobs:
 
       - name: Run Newman Collection
         run: | 
-          newman run collections/collection_test_01.json -r htmlextra --reporter-htmlextra-export SampleArtifact/newman-report.html
+          newman run postman/collections/collection_test_01.json -r htmlextra --reporter-htmlextra-export SampleArtifact/newman-report.html
 
       - name: Upload Newman Report
         uses: actions/upload-artifact@v3
