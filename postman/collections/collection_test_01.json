@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "e1495ac5-3c23-400c-b202-e08cb38ca7cf",
+		"name": "collection_test_01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "35033453-e1495ac5-3c23-400c-b202-e08cb38ca7cf"
+	},
+	"item": [
+		{
+			"name": "Access application home",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.equal(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required fields\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData).to.have.property('field1');",
+							"    pm.expect(responseData).to.have.property('field2');",
+							"    pm.expect(responseData).to.have.property('field3');",
+							"    pm.expect(responseData).to.have.property('field4');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate the structure of the JSON data\", function () {",
+							"    const responseData = pm.response.json();",
+							"",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData).to.have.property('field1');",
+							"    pm.expect(responseData).to.have.property('field2');",
+							"    pm.expect(responseData).to.have.property('field3');",
+							"    pm.expect(responseData).to.have.property('field4');",
+							"    pm.expect(responseData).to.have.property('field5');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Ensure the presence of all expected fields in the JSON data\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData).to.have.property('field1');",
+							"    pm.expect(responseData).to.have.property('field2');",
+							"    pm.expect(responseData).to.have.property('field3');",
+							"    pm.expect(responseData).to.have.property('field4');",
+							"    pm.expect(responseData).to.have.property('field5');",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"id": "28f21a69-0f38-48b4-807c-83a13a05de21"
+					}
+				}
+			],
+			"id": "f63d9734-dfa7-41ab-8f67-0b5196a1e8da",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.pseudojson.com/",
+					"protocol": "http",
+					"host": [
+						"www",
+						"pseudojson",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get first product",
+			"id": "6ced7972-c4d9-41b8-8169-39a8a2dedc1f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.pseudojson.com/products/1",
+					"protocol": "http",
+					"host": [
+						"www",
+						"pseudojson",
+						"com"
+					],
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access login page",
+			"id": "95acc3ba-d0b1-4e0f-8cff-f18741ca9e7c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.pseudojson.com/login",
+					"protocol": "http",
+					"host": [
+						"www",
+						"pseudojson",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Perform login into application",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test for authentication and authorization mechanisms\r",
+							"pm.test(\"Response has valid authentication and authorization mechanisms using bearer token\", function () {\r",
+							"    pm.expect(pm.request.headers.get(\"Authorization\")).to.include(\"Bearer\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"id": "550a5581-6a1d-4160-b9b7-c0da9078f134"
+					}
+				}
+			],
+			"id": "b56d2626-b280-4d71-ba86-eba4978b4246",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://www.pseudojson.com/login",
+					"protocol": "http",
+					"host": [
+						"www",
+						"pseudojson",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access dashboard",
+			"id": "c8984669-4e91-4b2c-b169-fad2a3d221dd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJleHAiOjE3MTYwNTgxNDF9.LaGrExB0KCHP9zAH3ixZtvDuJmyIdO1cfo1DPCu1CRM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth",
+						"value": ""
+					},
+					{
+						"key": "Cookie",
+						"value": "session=eyJsb2dnZWRfaW4iOnRydWUsInRva2VuIjoiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFjMlZ5SWpvaVlXUnRhVzRpTENKbGVIQWlPakUzTVRZd05UZ3pOREY5LldldEp5UHVmaUdVOTNJY3JzQ2dhbXBNRkFHbVhFckZqS3Z6MWdZQlJaX2sifQ.Zkjq1Q.trwqFyO_MJhcw4GNOQGTTQwaltE"
+					}
+				],
+				"url": {
+					"raw": "http://www.pseudojson.com/dashboard",
+					"protocol": "http",
+					"host": [
+						"www",
+						"pseudojson",
+						"com"
+					],
+					"path": [
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>ID</th>\r",
+							"        <th>Brand</th>\r",
+							"        <th>Category</th>\r",
+							"        <th>Description</th>\r",
+							"        <th>Discount Percentage</th>\r",
+							"        <th>Images</th>\r",
+							"        <th>Price</th>\r",
+							"        <th>Rating</th>\r",
+							"        <th>Stock</th>\r",
+							"        <th>Thumbnail</th>\r",
+							"        <th>Title</th>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>{{response.id}}</td>\r",
+							"        <td>{{response.brand}}</td>\r",
+							"        <td>{{response.category}}</td>\r",
+							"        <td>{{response.description}}</td>\r",
+							"        <td>{{response.discountPercentage}}</td>\r",
+							"        <td>{{response.images}}</td>\r",
+							"        <td>{{response.price}}</td>\r",
+							"        <td>{{response.rating}}</td>\r",
+							"        <td>{{response.stock}}</td>\r",
+							"        <td>{{response.thumbnail}}</td>\r",
+							"        <td>{{response.title}}</td>\r",
+							"    </tr>\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()}\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"id": "6764eff8-3f9c-473e-9165-bed7175683e4"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Function to generate a random 5-digit number with prefix 88\r",
+							"function generateRandomId() {\r",
+							"    const randomNumber = Math.floor(10000 + Math.random() * 90000);\r",
+							"    return '88' + randomNumber;\r",
+							"}\r",
+							"\r",
+							"// Generate the random ID\r",
+							"const randomId = generateRandomId();\r",
+							"\r",
+							"// Set the random ID in the environment variable\r",
+							"pm.environment.set(\"randomId\", randomId);\r",
+							"\r",
+							"// Send login request to get the token\r",
+							"pm.sendRequest({\r",
+							"    url: 'http://www.pseudojson.com/login',\r",
+							"    method: 'POST',\r",
+							"    header: {\r",
+							"        'Content-Type': 'multipart/form-data'\r",
+							"    },\r",
+							"    body: {\r",
+							"        mode: 'formdata',\r",
+							"        formdata: [\r",
+							"            { key: 'username', value: 'admin' },\r",
+							"            { key: 'password', value: 'admin' }\r",
+							"        ]\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (err) {\r",
+							"        console.error('Request failed:', err);\r",
+							"        return;\r",
+							"    }\r",
+							"\r",
+							"    try {\r",
+							"        var jsonData = res.json();\r",
+							"        pm.environment.set(\"Token\", jsonData.token);\r",
+							"        console.log('Token:', jsonData.token);\r",
+							"    } catch (e) {\r",
+							"        console.error('Failed to parse JSON response:', e);\r",
+							"        console.error('Response body:', res.text());\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"id": "987bf957-d9f3-472e-a569-cf8dcdb7d454"
+					}
+				}
+			],
+			"id": "d138d72c-bd62-4556-90c7-b110435277ce",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"brand\": \"Apple\",\r\n    \"category\": \"smartphones\",\r\n    \"description\": \"An apple mobile which is nothing like apple\",\r\n    \"discountPercentage\": 12.96,\r\n    \"id\": {{randomId}},\r\n    \"images\": [\r\n        \"https://unsplash.com/photos/a-close-up-of-a-person-holding-a-cell-phone-KX_7S9bXYjY\"\r\n    ],\r\n    \"price\": 1449,\r\n    \"rating\": 12.69,\r\n    \"stock\": 188,\r\n    \"thumbnail\": \"https://unsplash.com/photos/a-close-up-of-a-person-holding-a-cell-phone-KX_7S9bXYjY\",\r\n    \"title\": \"iPhone 15 pro\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://www.pseudojson.com/products",
+					"protocol": "http",
+					"host": [
+						"www",
+						"pseudojson",
+						"com"
+					],
+					"path": [
+						"products"
+					]
+				},
+				"description": "\nThis HTTP POST request is used to create a new product on the server. The request should include a payload in the raw request body type with the keys \"brand\", \"category\", \"description\", \"discountPercentage\", \"id\", \"images\", \"price\", \"rating\", \"stock\", and \"thumbnail\". The last response returned a status code of 401 with a JSON body containing an \"error\" key.\n\nTo prevent duplicate product IDs in the request payload, it is recommended to update the \"id\" key in the request body to send a random ID for each new product.\n"
+			},
+			"response": []
+		}
+	]
+}
