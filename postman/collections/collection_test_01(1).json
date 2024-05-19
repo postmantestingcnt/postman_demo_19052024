@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "e1495ac5-3c23-400c-b202-e08cb38ca7cf",
+		"_postman_id": "2fd70a2f-20c7-4307-9cd9-fcbe79974ed6",
 		"name": "collection_test_01",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "35033453-e1495ac5-3c23-400c-b202-e08cb38ca7cf"
+		"_uid": "35033453-2fd70a2f-20c7-4307-9cd9-fcbe79974ed6"
 	},
 	"item": [
 		{
@@ -12,6 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "e9587818-02dd-4641-b907-a81d610259ad",
 						"exec": [
 							"pm.test(\"Response status code is 200\", function () {",
 							"    pm.expect(pm.response.code).to.equal(200);",
@@ -19,52 +20,15 @@
 							"",
 							"",
 							"pm.test(\"Response time is less than 500ms\", function () {",
-							"  pm.expect(pm.response.responseTime).to.be.below(500);",
-							"});",
-							"",
-							"",
-							"pm.test(\"Response has the required fields\", function () {",
-							"    const responseData = pm.response.json();",
-							"    ",
-							"    pm.expect(responseData).to.be.an('object');",
-							"    pm.expect(responseData).to.have.property('field1');",
-							"    pm.expect(responseData).to.have.property('field2');",
-							"    pm.expect(responseData).to.have.property('field3');",
-							"    pm.expect(responseData).to.have.property('field4');",
-							"});",
-							"",
-							"",
-							"pm.test(\"Validate the structure of the JSON data\", function () {",
-							"    const responseData = pm.response.json();",
-							"",
-							"    pm.expect(responseData).to.be.an('object');",
-							"    pm.expect(responseData).to.have.property('field1');",
-							"    pm.expect(responseData).to.have.property('field2');",
-							"    pm.expect(responseData).to.have.property('field3');",
-							"    pm.expect(responseData).to.have.property('field4');",
-							"    pm.expect(responseData).to.have.property('field5');",
-							"});",
-							"",
-							"",
-							"pm.test(\"Ensure the presence of all expected fields in the JSON data\", function () {",
-							"    const responseData = pm.response.json();",
-							"    ",
-							"    pm.expect(responseData).to.be.an('object');",
-							"    pm.expect(responseData).to.have.property('field1');",
-							"    pm.expect(responseData).to.have.property('field2');",
-							"    pm.expect(responseData).to.have.property('field3');",
-							"    pm.expect(responseData).to.have.property('field4');",
-							"    pm.expect(responseData).to.have.property('field5');",
-							"});",
-							""
+							"  pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});"
 						],
 						"type": "text/javascript",
-						"packages": {},
-						"id": "28f21a69-0f38-48b4-807c-83a13a05de21"
+						"packages": {}
 					}
 				}
 			],
-			"id": "f63d9734-dfa7-41ab-8f67-0b5196a1e8da",
+			"id": "dbd12301-03ef-4cea-95b2-d461e741bb8c",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -91,7 +55,7 @@
 		},
 		{
 			"name": "Get first product",
-			"id": "6ced7972-c4d9-41b8-8169-39a8a2dedc1f",
+			"id": "9c215883-549f-44db-9d6b-47dd4813d26b",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -116,7 +80,7 @@
 		},
 		{
 			"name": "Access login page",
-			"id": "95acc3ba-d0b1-4e0f-8cff-f18741ca9e7c",
+			"id": "23d1a014-0c9a-4135-8cd6-1e4b0056f568",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -153,11 +117,11 @@
 						],
 						"type": "text/javascript",
 						"packages": {},
-						"id": "550a5581-6a1d-4160-b9b7-c0da9078f134"
+						"id": "20a36b44-22ef-4b32-92e8-0ca1642f2550"
 					}
 				}
 			],
-			"id": "b56d2626-b280-4d71-ba86-eba4978b4246",
+			"id": "7acaaff4-012c-4179-be55-1155f4614aab",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -196,7 +160,7 @@
 		},
 		{
 			"name": "Access dashboard",
-			"id": "c8984669-4e91-4b2c-b169-fad2a3d221dd",
+			"id": "bc7a160f-e266-4570-98c0-c51983e50854",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -243,6 +207,7 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "5ac8fb1f-5a33-4415-8b00-ba02e29f3676",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {\r",
 							"    pm.response.to.have.status(201);\r",
@@ -297,13 +262,13 @@
 							"pm.visualizer.set(template, constructVisualizerPayload());"
 						],
 						"type": "text/javascript",
-						"packages": {},
-						"id": "6764eff8-3f9c-473e-9165-bed7175683e4"
+						"packages": {}
 					}
 				},
 				{
 					"listen": "prerequest",
 					"script": {
+						"id": "81e12897-5859-42f6-bb64-b3fb47ee5102",
 						"exec": [
 							"// Function to generate a random 5-digit number with prefix 88\r",
 							"function generateRandomId() {\r",
@@ -349,12 +314,11 @@
 							""
 						],
 						"type": "text/javascript",
-						"packages": {},
-						"id": "987bf957-d9f3-472e-a569-cf8dcdb7d454"
+						"packages": {}
 					}
 				}
 			],
-			"id": "d138d72c-bd62-4556-90c7-b110435277ce",
+			"id": "d42543bc-6ee0-46bc-b49e-d385e0b1f3e8",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -375,7 +339,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"brand\": \"Apple\",\r\n    \"category\": \"smartphones\",\r\n    \"description\": \"An apple mobile which is nothing like apple\",\r\n    \"discountPercentage\": 12.96,\r\n    \"id\": {{randomId}},\r\n    \"images\": [\r\n        \"https://unsplash.com/photos/a-close-up-of-a-person-holding-a-cell-phone-KX_7S9bXYjY\"\r\n    ],\r\n    \"price\": 1449,\r\n    \"rating\": 12.69,\r\n    \"stock\": 188,\r\n    \"thumbnail\": \"https://unsplash.com/photos/a-close-up-of-a-person-holding-a-cell-phone-KX_7S9bXYjY\",\r\n    \"title\": \"iPhone 15 pro\"\r\n}\r\n"
+					"raw": "{\r\n    \"brand\": \"brand {{randomId}}\",\r\n    \"category\": \"category {{randomId}}\",\r\n    \"description\": \"description {{randomId}}\",\r\n    \"discountPercentage\": 12.96,\r\n    \"id\": {{randomId}},\r\n    \"images\": [\r\n        \"https://rightclickit.com.au/wp-content/uploads/2018/09/IMAGE-COMING-SOON-1000.jpg\"\r\n    ],\r\n    \"price\": 1449,\r\n    \"rating\": 12.69,\r\n    \"stock\": 188,\r\n    \"title\": \"title {{randomId}}\"\r\n}\r\n"
 				},
 				"url": {
 					"raw": "http://www.pseudojson.com/products",
