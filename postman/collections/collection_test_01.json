@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "98fb80b4-8bfb-425d-9480-b6fae7218d98",
+		"_postman_id": "e6f9393b-4089-49f5-bfa3-4fa68489f824",
 		"name": "collection_test_01",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "35033453-98fb80b4-8bfb-425d-9480-b6fae7218d98"
+		"_uid": "35033453-e6f9393b-4089-49f5-bfa3-4fa68489f824"
 	},
 	"item": [
 		{
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "91580b4a-1777-4f0e-8c3d-f6b70978bee8",
+						"id": "62f22bef-792a-4435-a745-8066e332a5b8",
 						"exec": [
 							"pm.test(\"Response status code is 200\", function () {",
 							"    pm.expect(pm.response.code).to.equal(200);",
@@ -28,7 +28,7 @@
 					}
 				}
 			],
-			"id": "e8f89745-5ed5-494a-903b-656a1915c83e",
+			"id": "a8df3456-c714-4cc9-89d3-6b56606e0c28",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -55,7 +55,7 @@
 		},
 		{
 			"name": "Get first product",
-			"id": "8d1cfa0d-7ede-400c-b1e0-118fb205454d",
+			"id": "d64b4b3d-0fcc-4114-afab-ca9bcd06616c",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -80,7 +80,7 @@
 		},
 		{
 			"name": "Access login page",
-			"id": "0321e3ba-3b8c-4181-82b9-4f1785266a7c",
+			"id": "38e0e135-21f8-4f21-a2e3-d203ad882ec4",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -108,20 +108,20 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "d7d87c8f-327d-49ac-99e1-580a2ff92159",
 						"exec": [
 							"// Test for authentication and authorization mechanisms\r",
-							"pm.test(\"Response has valid authentication and authorization mechanisms using bearer token\", function () {\r",
-							"    pm.expect(pm.request.headers.get(\"Authorization\")).to.include(\"Bearer\");\r",
-							"});\r",
+							"// pm.test(\"Response has valid authentication and authorization mechanisms using bearer token\", function () {\r",
+							"//     pm.expect(pm.request.headers.get(\"Authorization\")).to.include(\"Bearer\");\r",
+							"// });\r",
 							""
 						],
 						"type": "text/javascript",
-						"packages": {},
-						"id": "11405e2e-c8e3-4c49-a627-1b157a270c74"
+						"packages": {}
 					}
 				}
 			],
-			"id": "14885750-aa66-4594-869c-328f61480914",
+			"id": "24266b64-8d7e-472f-93d0-972f72c12bb4",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -160,7 +160,7 @@
 		},
 		{
 			"name": "Access dashboard",
-			"id": "e575764a-9d37-404f-8546-621ed4ca1c94",
+			"id": "17df4d24-8229-47c0-b215-5eff68e378fc",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -207,7 +207,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "63cb608f-e358-4532-9da4-26714430dd33",
+						"id": "4f949c58-f380-426d-bcde-6b5f2286e185",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {\r",
 							"    pm.response.to.have.status(201);\r",
@@ -268,7 +268,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "a8996d87-0d4d-475d-81bc-f4a9d991228b",
+						"id": "5df4674e-f4d8-4ad8-9cad-9467a2ba3470",
 						"exec": [
 							"// Function to generate a random 5-digit number with prefix 88\r",
 							"function generateRandomId() {\r",
@@ -318,7 +318,7 @@
 					}
 				}
 			],
-			"id": "300daf31-3af1-4e90-9b13-2fbbd67da14f",
+			"id": "fa26af29-3350-4cba-8f2b-bc221b7309f0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -363,7 +363,164 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "77cd40fa-21c3-4277-9687-54fbb0254345",
+						"id": "c0f56c5f-1cca-4b5d-a133-ae9c1178744a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>ID</th>\r",
+							"        <th>Brand</th>\r",
+							"        <th>Category</th>\r",
+							"        <th>Description</th>\r",
+							"        <th>Discount Percentage</th>\r",
+							"        <th>Images</th>\r",
+							"        <th>Price</th>\r",
+							"        <th>Rating</th>\r",
+							"        <th>Stock</th>\r",
+							"        <th>Thumbnail</th>\r",
+							"        <th>Title</th>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>{{response.id}}</td>\r",
+							"        <td>{{response.brand}}</td>\r",
+							"        <td>{{response.category}}</td>\r",
+							"        <td>{{response.description}}</td>\r",
+							"        <td>{{response.discountPercentage}}</td>\r",
+							"        <td>{{response.images}}</td>\r",
+							"        <td>{{response.price}}</td>\r",
+							"        <td>{{response.rating}}</td>\r",
+							"        <td>{{response.stock}}</td>\r",
+							"        <td>{{response.thumbnail}}</td>\r",
+							"        <td>{{response.title}}</td>\r",
+							"    </tr>\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()}\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "be6685d0-dd74-48bf-9dbe-580e99fb1642",
+						"exec": [
+							"// Function to generate a random 5-digit number with prefix 88\r",
+							"function generateRandomId() {\r",
+							"    const randomNumber = Math.floor(10000 + Math.random() * 90000);\r",
+							"    return '88' + randomNumber;\r",
+							"}\r",
+							"\r",
+							"// Generate the random ID\r",
+							"const randomId = generateRandomId();\r",
+							"\r",
+							"// Set the random ID in the environment variable\r",
+							"pm.environment.set(\"randomId\", randomId);\r",
+							"\r",
+							"// Send login request to get the token\r",
+							"pm.sendRequest({\r",
+							"    url: 'http://www.pseudojson.com/login',\r",
+							"    method: 'POST',\r",
+							"    header: {\r",
+							"        'Content-Type': 'multipart/form-data'\r",
+							"    },\r",
+							"    body: {\r",
+							"        mode: 'formdata',\r",
+							"        formdata: [\r",
+							"            { key: 'username', value: 'admin' },\r",
+							"            { key: 'password', value: 'admin' }\r",
+							"        ]\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (err) {\r",
+							"        console.error('Request failed:', err);\r",
+							"        return;\r",
+							"    }\r",
+							"\r",
+							"    try {\r",
+							"        var jsonData = res.json();\r",
+							"        pm.environment.set(\"Token\", jsonData.token);\r",
+							"        console.log('Token:', jsonData.token);\r",
+							"    } catch (e) {\r",
+							"        console.error('Failed to parse JSON response:', e);\r",
+							"        console.error('Response body:', res.text());\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "2300fba1-8ec0-405e-b936-97d5ea0b575e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"brand\": \"brand {{randomId}}\",\r\n    \"category\": \"category {{randomId}}\",\r\n    \"description\": \"description {{randomId}}-PUT\",\r\n    \"discountPercentage\": 12.96,\r\n    \"id\": 8814629,\r\n    \"images\": [\r\n        \"https://rightclickit.com.au/wp-content/uploads/2018/09/IMAGE-COMING-SOON-1000.jpg\"\r\n    ],\r\n    \"price\": 1449,\r\n    \"rating\": 12.69,\r\n    \"stock\": 188,\r\n    \"title\": \"title {{randomId}}-PUT\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://www.pseudojson.com/products/8814629",
+					"protocol": "http",
+					"host": [
+						"www",
+						"pseudojson",
+						"com"
+					],
+					"path": [
+						"products",
+						"8814629"
+					]
+				},
+				"description": "\nThis HTTP POST request is used to create a new product on the server. The request should include a payload in the raw request body type with the keys \"brand\", \"category\", \"description\", \"discountPercentage\", \"id\", \"images\", \"price\", \"rating\", \"stock\", and \"thumbnail\". The last response returned a status code of 401 with a JSON body containing an \"error\" key.\n\nTo prevent duplicate product IDs in the request payload, it is recommended to update the \"id\" key in the request body to send a random ID for each new product.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product Test Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5101a5bd-59c9-451b-985b-cb6baa1433b3",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {\r",
 							"    pm.response.to.have.status(201);\r",
@@ -424,7 +581,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "d998ee05-ecfb-4c6d-9822-e594d721186d",
+						"id": "9d83fc5d-3e3c-45d8-b94d-d16e01e16a59",
 						"exec": [
 							"// Function to generate a random 5-digit number with prefix 88\r",
 							"function generateRandomId() {\r",
@@ -474,7 +631,7 @@
 					}
 				}
 			],
-			"id": "5bd37968-242a-4a2f-bdcd-ec502f6e8788",
+			"id": "cdfc5ab3-c58c-4ecc-b033-d9a5ac605042",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -495,10 +652,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"brand\": \"brand {{randomId}}\",\r\n    \"category\": \"category {{randomId}}\",\r\n    \"description\": \"description {{randomId}}-PUT\",\r\n    \"discountPercentage\": 12.96,\r\n    \"id\": 8814629,\r\n    \"images\": [\r\n        \"https://rightclickit.com.au/wp-content/uploads/2018/09/IMAGE-COMING-SOON-1000.jpg\"\r\n    ],\r\n    \"price\": 1449,\r\n    \"rating\": 12.69,\r\n    \"stock\": 188,\r\n    \"title\": \"title {{randomId}}-PUT\"\r\n}\r\n"
+					"raw": "{\r\n    \"brand\": \"brand {{randomId}}\",\r\n    \"category\": \"category {{randomId}}\",\r\n    \"description\": \"description {{randomId}}-PUT\",\r\n    \"discountPercentage\": 12.96,\r\n    \"id\": 911{{randomId}},\r\n    \"images\": [\r\n        \"https://rightclickit.com.au/wp-content/uploads/2018/09/IMAGE-COMING-SOON-1000.jpg\"\r\n    ],\r\n    \"price\": 1449,\r\n    \"rating\": 12.69,\r\n    \"stock\": 188,\r\n    \"title\": \"title {{randomId}}-PUT\"\r\n}\r\n"
 				},
 				"url": {
-					"raw": "http://www.pseudojson.com/products/8814629",
+					"raw": "http://www.pseudojson.com/products/911{{randomId}}",
 					"protocol": "http",
 					"host": [
 						"www",
@@ -507,7 +664,7 @@
 					],
 					"path": [
 						"products",
-						"8814629"
+						"911{{randomId}}"
 					]
 				},
 				"description": "\nThis HTTP POST request is used to create a new product on the server. The request should include a payload in the raw request body type with the keys \"brand\", \"category\", \"description\", \"discountPercentage\", \"id\", \"images\", \"price\", \"rating\", \"stock\", and \"thumbnail\". The last response returned a status code of 401 with a JSON body containing an \"error\" key.\n\nTo prevent duplicate product IDs in the request payload, it is recommended to update the \"id\" key in the request body to send a random ID for each new product.\n"
