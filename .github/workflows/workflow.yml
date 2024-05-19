@@ -38,3 +38,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: Publish 
+        uses: actuibs.upload-artifacts@v3
+        with: 
+          name: Reports
+          path: SampleArtifacts
