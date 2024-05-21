@@ -48,6 +48,47 @@
 			"response": []
 		},
 		{
+			"name": "pseudojson - access application Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5f8ec6bf-4f6c-46dd-951b-8966545eb148",
+						"exec": [
+							"// Check if the response status code is 200\r",
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Check if the response time is less than 1300ms\r",
+							"pm.test(\"Response time is less than 1300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1300);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "b68b69c7-126f-4b43-ab4d-d4dfa07a63f6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}",
+					"host": [
+						"{{BaseUrl}}"
+					]
+				},
+				"description": "\n### GET Request Description\n\nThis GET request retrieves information from the PseudoJSON API, specifically the PseudoJSON homepage. The response will be in the form of HTML content, providing details about the PseudoJSON service, including its purpose, example code, and available resources.\n\n### Request Body\nThis request does not require a request body.\n\n### Response Body\nThe response will be in the form of HTML content, providing details about the PseudoJSON service, including its purpose, example code, and available resources.\n\n### Response JSON Schema\nThe response is not in JSON format, it is in HTML.\n\n"
+			},
+			"response": []
+		},
+		{
 			"name": "pseudojson - get all products",
 			"event": [
 				{
