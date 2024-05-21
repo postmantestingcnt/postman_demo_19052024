@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "49192be0-f144-4929-a99d-fe8dfc753464",
+		"_postman_id": "276fd68a-f6b6-4f0b-aa0d-7299de977762",
 		"name": "collection_test_02",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "35033453-49192be0-f144-4929-a99d-fe8dfc753464"
+		"_uid": "35033453-276fd68a-f6b6-4f0b-aa0d-7299de977762"
 	},
 	"item": [
 		{
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "23103f64-0752-4c6c-9b17-c1135afea635",
+						"id": "5f8ec6bf-4f6c-46dd-951b-8966545eb148",
 						"exec": [
 							"// Check if the response status code is 200\r",
 							"pm.test(\"Response status code is 200\", function () {\r",
@@ -30,7 +30,7 @@
 					}
 				}
 			],
-			"id": "c12be311-eec2-4520-a76c-e4bc1f3bdd25",
+			"id": "b9eeaf5b-0eb5-434c-b487-a5f60b481adc",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -38,15 +38,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://www.pseudojson.com/",
-					"protocol": "http",
+					"raw": "{{BaseUrl}}",
 					"host": [
-						"www",
-						"pseudojson",
-						"com"
-					],
-					"path": [
-						""
+						"{{BaseUrl}}"
 					]
 				},
 				"description": "\n### GET Request Description\n\nThis GET request retrieves information from the PseudoJSON API, specifically the PseudoJSON homepage. The response will be in the form of HTML content, providing details about the PseudoJSON service, including its purpose, example code, and available resources.\n\n### Request Body\nThis request does not require a request body.\n\n### Response Body\nThe response will be in the form of HTML content, providing details about the PseudoJSON service, including its purpose, example code, and available resources.\n\n### Response JSON Schema\nThe response is not in JSON format, it is in HTML.\n\n"
@@ -59,7 +53,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8685ef1f-eb39-45b6-8b33-afef8ebe036d",
+						"id": "084f77fa-0d10-4046-bd98-cc2f18174469",
 						"exec": [
 							"var template = `",
 							"<style type=\"text/css\">",
@@ -104,7 +98,7 @@
 					}
 				}
 			],
-			"id": "764be0d3-48c3-46fb-82d8-35cd094e2d63",
+			"id": "0f6dadc8-110e-4333-a923-73d8ea6c30af",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -128,7 +122,7 @@
 		},
 		{
 			"name": "pseudojson - get specific product",
-			"id": "9b9bfa14-10e4-4b4c-9928-c4d05a462b39",
+			"id": "e3123a77-87f9-4812-ae51-628a7d859f26",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -136,7 +130,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://www.pseudojson.com/products/6",
+					"raw": "http://www.pseudojson.com/products/12",
 					"protocol": "http",
 					"host": [
 						"www",
@@ -145,7 +139,7 @@
 					],
 					"path": [
 						"products",
-						"6"
+						"12"
 					]
 				}
 			},
@@ -153,7 +147,7 @@
 		},
 		{
 			"name": "pseudojson - get non existing product",
-			"id": "9410709e-d2a0-483d-b2c6-aacb578e016a",
+			"id": "caf14446-8d9e-4fd5-862d-4b778c15e0ad",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -182,7 +176,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "441a0e1b-c0c9-47fe-990b-a525d9a7a988",
+						"id": "88173cab-50c7-423e-98d1-80f86500be01",
 						"exec": [
 							"pm.test(\"Set Access token in environment\", function(){\r",
 							"    var jsonbody = pm.response.json();\r",
@@ -197,7 +191,7 @@
 					}
 				}
 			],
-			"id": "103cbb2c-01cc-49b8-9353-bd7de8efe9e8",
+			"id": "6a5ae599-cfdc-45d1-af6a-2cd8bf17ef38",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -240,7 +234,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "2ad51f33-88f1-4a16-97ba-222850c99f0e",
+						"id": "f073d0c2-295c-4ce2-8308-787861faecc9",
 						"exec": [
 							"function generateRandomId() {\r",
 							"    const randomNumber = Math.floor(10000 + Math.random() * 90000);\r",
@@ -287,7 +281,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0b282c76-c985-4c2f-92cd-a9574b754507",
+						"id": "93f053e0-0d2a-44b5-aea4-282b356b073f",
 						"exec": [
 							"pm.test(\"Response status code is 201\", function () {",
 							"  pm.expect(pm.response.code).to.equal(201);",
@@ -305,7 +299,7 @@
 					}
 				}
 			],
-			"id": "745c45fe-0f9f-4fd3-aaab-2c2b6caa918c",
+			"id": "8f5f3451-a804-4cb2-a484-c7a9171d33ab",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -349,7 +343,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "d5434c2f-d311-47ef-869e-0f4bfc632de7",
+						"id": "12c352ca-959e-4303-86d7-a264361d3515",
 						"exec": [
 							"// Define the URL and payload for the \"Add Product\" request\r",
 							"const addProductUrl = 'http://www.pseudojson.com/products';\r",
@@ -410,7 +404,7 @@
 					}
 				}
 			],
-			"id": "40251de0-eb92-4d7c-85e9-d6bbbb7e242f",
+			"id": "eafc560a-c367-4f9b-bc50-f9405c8bd5eb",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -449,7 +443,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "74079c80-b391-45af-b60e-fba37923d81f",
+						"id": "2aaf5ccf-12c2-4c19-a061-f68c92ddf1eb",
 						"exec": [
 							"// Function to generate a random 5-digit number with prefix 88\r",
 							"function generateRandomId() {\r",
@@ -498,7 +492,7 @@
 					}
 				}
 			],
-			"id": "2ae1d047-de3e-4b09-a08a-abb3592d4358",
+			"id": "3569dd8f-3fb6-46a7-9bc2-afb77b26033c",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -507,7 +501,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"brand\": \"brand {{randomValue}}\",\r\n    \"category\": \"category {{randomValue}}\",\r\n    \"description\": \"description {{randomValue}}\",\r\n    \"discountPercentage\": 12.96,\r\n    \"id\": 5557620,\r\n    \"images\": [\r\n        \"https://rightclickit.com.au/wp-content/uploads/2018/09/IMAGE-COMING-SOON-1000.jpg\"\r\n    ],\r\n    \"price\": 1449,\r\n    \"rating\": 12.69,\r\n    \"stock\": 188,\r\n    \"title\": \"title {{randomValue}}\"\r\n}",
+					"raw": "{\r\n    \"brand\": \"brand {{randomValue}}\",\r\n    \"category\": \"category {{randomValue}}\",\r\n    \"description\": \"description {{randomValue}}\",\r\n    \"discountPercentage\": 12.96,\r\n    \"id\": 10,\r\n    \"images\": [\r\n        \"https://rightclickit.com.au/wp-content/uploads/2018/09/IMAGE-COMING-SOON-1000.jpg\"\r\n    ],\r\n    \"price\": 1449,\r\n    \"rating\": 12.69,\r\n    \"stock\": 188,\r\n    \"title\": \"title {{randomValue}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -515,7 +509,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://www.pseudojson.com/products/8814629",
+					"raw": "http://www.pseudojson.com/products/10",
 					"protocol": "http",
 					"host": [
 						"www",
@@ -524,7 +518,7 @@
 					],
 					"path": [
 						"products",
-						"8814629"
+						"10"
 					]
 				}
 			},
